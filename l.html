@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Name Display with Rectangle Effect</title>
+    <style>
+        /* Style for the container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d1e5f1;
+        }
+        
+        /* Style for the button wrapper to create the outer rectangle effect */
+        .button-wrapper {
+            padding: 15px 25px; /* Adjust padding to change rectangle size */
+            border-radius: 10px; /* Slight rounding for rectangle corners */
+            background-color: rgba(11, 115, 132, 0.2); /* Light blue outer rectangle */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Style for the button */
+        .toggle-button {
+            background-color: #3752eb;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for button */
+        }
+        
+        /* Style for the text to be displayed */
+        .name-text {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            <div class="button-wrapper">
+                <button id="toggleButton" class="toggle-button" onclick="toggleName()">Tampilkan</button>
+            </div>
+            <div id="nameText" class="name-text" style="display: none;">Nama:jamal prindapan</div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the name display */
+        function toggleName() {
+            const nameText = document.getElementById("nameText");
+            const button = document.getElementById("toggleButton");
+
+            if (nameText.style.display === "none") {
+                nameText.style.display = "block";
+                button.textContent = "Sembunyikan";
+            } else {
+                nameText.style.display = "none";
+                button.textContent = "Tampilkan";
+            }
+        }
+    </script>
+</body>
+</html>
